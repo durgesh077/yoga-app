@@ -17,8 +17,8 @@ module.exports =  async (req , res)=>{
         res.status(201).send('Registered Succesfully!!') ;
     }
     catch(err){
-        console.error(err) ;
-        res.status(501).send(err.message??'Unable to register') ;
+        console.error(err.message) ;
+        res.status(401).send(err.message??'Unable to register') ;
     }
 
 }

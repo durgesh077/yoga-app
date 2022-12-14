@@ -33,7 +33,6 @@ const  isPrevPaymentDue = async (username)=>{
 
 const getDetails = async (req , res)=>{
     try{
-        console.log(req.session)
         const username =  req.session.username ;
         const prevPaymentDue = isPrevPaymentDue(username) 
         const user = await Users.findOne({username}) ;
@@ -179,7 +178,7 @@ const changeBatch = async (req, res)=>{
         const {_id} = req.params
         await Subscriptions.updateOne({_id},{batch})
 
-        res.send("changed")
+        res.send("Batch Changed Successfully")
     } catch (err){
         console.log('failed changing batch')
         res.status(501).send("failed changing batch")

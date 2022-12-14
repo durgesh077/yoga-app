@@ -3,7 +3,6 @@ const app =  express() ;
 const {registerRoute, loginRoute , detailsRoute} = require('./routes') ;
 const bodyParser = require('body-parser') ;
 const session = require('cookie-session') ;
-const cookieParser = require('cookie-parser');
 const path = require('path')
 
 app.use(session({
